@@ -2,28 +2,30 @@ const inventory = newInventory()
 move(inventory).to(0, 0)
 
 const character = newImage('assets/green-character/static.gif')
+let direction = null;
+let x = 100;
+let y = 250;
 
-function handleDirectionChange(direction){
-    if(direction === null){
-        character.src = `assets/green-character/static.gif`
-    }
+move(character).to(100 , 250)
+
+function moveCharacter() {
     if(direction === 'west'){
-        character.src = `assets/green-character/west.gif`
+        x = x -1
     }
-    if(direction === 'north'){
-        character.src = `assets/green-character/north.gif`
+    if (direction === 'north'){
+        y = y + 1
     }
     if(direction === 'east'){
-        character.src = `assets/green-character/east.gif`
+        x = x + 1
+    
     }
     if(direction === 'south'){
-        character.src = `assets/green-character/south.gif`
+        y = y - 1
     }
+    character.style.left = x + 'px'
+    character.style.bottom = y + 'px'
 }
-
-move(character).withArrowKeys(100, 250, handleDirectionChange)
-
-
+setInterval(moveCharacter, 1)
 
 move(newImage('assets/tree.png')).to(200, 450)
 move(newImage('assets/pillar.png')).to(350, 250)
