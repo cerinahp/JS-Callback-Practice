@@ -10,7 +10,7 @@ move(character).to(100 , 250)
 
 function moveCharacter() {
     if(direction === 'west'){
-        x = x -1
+        x = x - 1
     }
     if (direction === 'north'){
         y = y + 1
