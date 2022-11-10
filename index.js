@@ -5,8 +5,9 @@ const character = newImage('assets/green-character/static.gif')
 let direction = null;
 let x = 100;
 let y = 250;
+character.style.position = 'fixed';
 
-function moveCharacter() {
+function moveCharacter(){
     if(direction === 'west'){
         x = x - 1
     }
@@ -22,8 +23,8 @@ function moveCharacter() {
     }
     character.style.left = x + 'px'
     character.style.bottom = y + 'px'
-    console.log(direction === 'east')
 }
+
 setInterval(moveCharacter, 1)
 
 move(newImage('assets/tree.png')).to(200, 450)
