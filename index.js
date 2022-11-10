@@ -6,8 +6,6 @@ let direction = null;
 let x = 100;
 let y = 250;
 
-move(character).to(100 , 250)
-
 function moveCharacter() {
     if(direction === 'west'){
         x = x - 1
@@ -24,6 +22,7 @@ function moveCharacter() {
     }
     character.style.left = x + 'px'
     character.style.bottom = y + 'px'
+    console.log(direction === 'east')
 }
 setInterval(moveCharacter, 1)
 
